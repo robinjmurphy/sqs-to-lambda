@@ -1,0 +1,33 @@
+{
+  "name": "sqs-to-lambda",
+  "version": "1.0.3",
+  "description": "Trigger Lambda invocations from an SQS queue",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "sqs-to-lambda": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robinjmurphy/sqs-to-lambda.git"
+  },
+  "keywords": [
+    "sqs",
+    "lambda",
+    "aws"
+  ],
+  "author": "robin@robinmurphy.co.uk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinjmurphy/sqs-to-lambda/issues"
+  },
+  "homepage": "https://github.com/robinjmurphy/sqs-to-lambda",
+  "dependencies": {
+    "aws-sdk": "^2.0.29",
+    "sqs-consumer": "^1.0.2",
+    "yargs": "^1.3.3"
+  }
+}
