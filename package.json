@@ -3,9 +3,6 @@
   "version": "1.0.3",
   "description": "Trigger Lambda invocations from an SQS queue",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "preferGlobal": true,
   "bin": {
     "sqs-to-lambda": "index.js"
