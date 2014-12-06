@@ -24,7 +24,7 @@ export AWS_ACCESS_KEY_ID=...
 Start the application:
 
 ```
-sqs-to-lambda --queueUrl <queue-url> --functionName <function-name> --region <aws-region-id>
+sqs-to-lambda --queue-url <queue-url> --function-name <function-name> --region <aws-region-id>
 ```
 
 ## SQS message format

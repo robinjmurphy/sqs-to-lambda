@@ -10,7 +10,7 @@ var queueUrl = argv.queueUrl;
 var functionName = argv.functionName;
 
 if (!region || !queueUrl || !functionName) {
-  console.log('Usage: sqs-to-lambda --queueUrl <queue-url> --functionName <function-name> --region <region>');
+  console.log('Usage: sqs-to-lambda --queue-url <queue-url> --function-name <function-name> --region <region>');
   process.exit();
 }
 
