@@ -32,13 +32,11 @@ function handleMessage(message, done) {
     if (err) {
       debug('Failed to invoke function for message %s', message.MessageId);
       debug(err);
-
       return done(err);
     }
 
     debug('Function invoked for message %s', message.MessageId);
     debug(res);
-
     done();
   });
 }
