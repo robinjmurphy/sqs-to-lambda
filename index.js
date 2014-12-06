@@ -3,6 +3,7 @@
 var AWS = require('aws-sdk');
 var argv = require('yargs').argv;
 var Consumer = require('sqs-consumer');
+var debug = require('debug')('sqs-to-lambda');
 
 var region = argv.region;
 var queueUrl = argv.queueUrl;
@@ -27,7 +28,19 @@ function handleMessage(message, done) {
   lambda.invokeAsync({
     FunctionName: functionName,
     InvokeArgs: message.Body
-  }, done);
+  }, function (err, res) {
+    if (err) {
+      debug('Failed to invoke function for message %s', message.MessageId);
+      debug(err);
+
+      return done(err);
+    }
+
+    debug('Function invoked for message %s', message.MessageId);
+    debug(res);
+
+    done();
+  });
 }
 
 function verifyLambdaFunction(cb) {
@@ -46,5 +59,6 @@ verifyLambdaFunction(function (err) {
     process.exit(1);
   }
 
+  debug('Starting polling for SQS messages');
   app.start();
 });
