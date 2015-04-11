@@ -2,9 +2,11 @@
 
 > Trigger Lambda invocations from an SQS queue
 
-[AWS Lambda](http://aws.amazon.com/lambda/) doesn't currently support [SQS](http://aws.amazon.com/sqs/) or [SNS](http://aws.amazon.com/sns/) as an event source. This application listens to an SQS queue and creates a Lambda invocation whenever a message is received, bridging the gap between SQS and Lambda.
+This application listens to an SQS queue and creates a Lambda invocation whenever a message is received, bridging the gap between SQS and Lambda.
 
-Having to run this application continually isn't ideal when your aim is to execute a function only when you need to – it's a stop gap measure until SQS/SNS support (hopefully) arrives in Lambda.
+Having to run this application continually isn't ideal when your aim is to execute a function only when you need to – ~~it's a stop gap measure until SQS/SNS support (hopefully) arrives in Lambda~~.
+
+**Update:** Lambda now [supports SNS notifications as an event source](http://aws.amazon.com/blogs/aws/aws-lambda-update-production-status-and-a-focus-on-mobile-apps/), which makes this hack entirely unnecessary. 
 
 ## Installation
 
