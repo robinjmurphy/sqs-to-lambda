@@ -6,7 +6,7 @@ This application listens to an SQS queue and creates a Lambda invocation wheneve
 
 Having to run this application continually isn't ideal when your aim is to execute a function only when you need to – ~~it's a stop gap measure until SQS/SNS support (hopefully) arrives in Lambda~~.
 
-**Update:** Lambda now [supports SNS notifications as an event source](http://aws.amazon.com/blogs/aws/aws-lambda-update-production-status-and-a-focus-on-mobile-apps/), which makes this hack entirely unnecessary. 
+**Update:** Lambda now [supports SNS notifications as an event source](http://docs.aws.amazon.com/sns/latest/dg/sns-lambda.html), which makes this hack entirely unneccessary for SNS notifcations. You might still find it useful if you like the idea of using a Lambda function to process jobs on an SQS queue.
 
 ## Installation
 
