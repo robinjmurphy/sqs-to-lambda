@@ -8,6 +8,7 @@ var debug = require('debug')('sqs-to-lambda');
 var region = argv.region;
 var queueUrl = argv.queueUrl;
 var functionName = argv.functionName;
+
 if(typeof queueUrl === 'object') {
   queueUrl = queueUrl[0];
 }
