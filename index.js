@@ -1,13 +1,22 @@
 #! /usr/bin/env node
 
 var AWS = require('aws-sdk');
-var argv = require('yargs').argv;
+var argv = require('yargs').env('AWS').argv;
 var Consumer = require('sqs-consumer');
 var debug = require('debug')('sqs-to-lambda');
 
 var region = argv.region;
 var queueUrl = argv.queueUrl;
 var functionName = argv.functionName;
+if(typeof queueUrl === 'object') {
+  queueUrl = queueUrl[0];
+}
+if(typeof region === 'object') {
+  region = region[0];
+}
+if(typeof functionName === 'object') {
+  functionName = functionName[0];
+}
 
 if (!region || !queueUrl || !functionName) {
   console.log('Usage: sqs-to-lambda --queue-url <queue-url> --function-name <function-name> --region <region>');

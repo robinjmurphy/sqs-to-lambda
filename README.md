@@ -29,6 +29,14 @@ Start the application:
 sqs-to-lambda --queue-url <queue-url> --function-name <function-name> --region <aws-region-id>
 ```
 
+Optionally, you can also use environment variables to pass `queue-url`, `function-name` and `aws-region-id`:
+
+```
+AWS_QUEUE_URL=<queue-url> AWS_FUNCTION_NAME=<function-name> AWS_REGION=<aws-region-id> sqs-to-lambda
+```
+
+_Note that if both environment variables are set and arguments are passed via `--`, the `--` arguments take precedence._
+
 ## SQS message format
 
 The SQS message body should be in JSON format. The content of the message is passed to your Lambda function as its first argument. For example:
