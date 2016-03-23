@@ -1,18 +1,7 @@
 #! /usr/bin/env node
 
 var AWS = require('aws-sdk');
-var argv = require('yargs')
-                           .env('AWS')
-                           .option('region', {
-                             alias: 'region'
-                           })
-                           .option('queueUrl', {
-                             alias: 'queue'
-                           })
-                           .option('functionName', {
-                             alias: 'function'
-                           })
-                           .argv;
+var argv = require('yargs').env('AWS').argv;
 var Consumer = require('sqs-consumer');
 var debug = require('debug')('sqs-to-lambda');
 
