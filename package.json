@@ -1,6 +1,6 @@
 {
   "name": "sqs-to-lambda",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Trigger Lambda invocations from an SQS queue",
   "main": "index.js",
   "preferGlobal": true,
