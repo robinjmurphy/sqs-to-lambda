@@ -37,6 +37,8 @@ AWS_QUEUE_URL=<queue-url> AWS_FUNCTION_NAME=<function-name> AWS_REGION=<aws-regi
 
 > Note that if both environment variables are set and arguments are passed as flags, the arguments take precedence.
 
+Additionally, when you have set `AWS_ENVIRONMENT` we will automatically append this behind your `<function-name>`.
+
 ## SQS message format
 
 The SQS message body should be in JSON format. The content of the message is passed to your Lambda function as its first argument. For example:
